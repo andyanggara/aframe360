@@ -2,10 +2,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    background: linear-gradient(1.22deg, #feef67 7.21%, #fee60f 92.28%);
 }
 
-.card {
-    min-height: 300px;
+.card,
+.modal-content {
+    border-radius: 20px;
+    background: linear-gradient(180deg, #fffdeb 11.98%, #fefad7 85.42%);
 }
 
 .placeholder {
@@ -49,4 +52,23 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+.btn-primary {
+    border-radius: 60px;
+    background-color: #ff2626;
+    border-color: #ff2626;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #ff5100;
+    border-color: #ff5100;
+}
+
+.border-h2 {
+    border-radius: 60px;
+    background: linear-gradient(180deg, #fffdeb 11.98%, #fefad7 85.42%);
+    padding-left: 20px;
+    padding-right: 20px;
 }

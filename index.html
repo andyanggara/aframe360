@@ -21,7 +21,9 @@
     <body>
         <div class="d-flex align-items-center min-vh-100">
             <div class="container">
-                <h2 class="text-center">Choose the Series below:</h2>
+                <h2 class="text-center mt-4">
+                    <span class="border-h2">Choose the Series below:</span>
+                </h2>
                 <div id="card" class="d-flex row"></div>
             </div>
         </div>
@@ -61,10 +63,12 @@
             document.getElementById('card').innerHTML = dataCard
                 .map(
                     (item) =>
-                        `<div class="col-sm-3 my-2 px-2">
-                            <div class="card shadow">
+                        `<div class="col-lg-3 col-md-6 my-2 px-2">
+                            <div class="card shadow" style="min-height: 300px;">
                                 <h5 class="card-header text-center">${item.judul}</h5>
-                                <img class="img-fluid" src="${item.gambar}" alt="${item.alt}" />
+                                <div style="padding: 1rem;">
+                                    <img draggable="false" style="border-radius: 16px" class="img-fluid" src="${item.gambar}" alt="${item.alt}" />
+                                </div>
                                 <div class="card-body">
                                     <p class="card-text">${item.desc}</p>
                                     <div class="d-flex justify-content-end">
