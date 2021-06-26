@@ -29,6 +29,12 @@
         <!-- Style -->
     </head>
     <body>
+        <!-- Load buffer -->
+        <div id="placeholder_1" class="placeholder">
+            <div class="loader"></div>
+        </div>
+        <!-- Load buffer -->
+
         <div class="d-flex align-items-center min-vh-100">
             <div>
                 <div id="main" class="text-center"></div>
@@ -135,5 +141,29 @@
             };
         </script>
         <!-- Redirect to next page -->
+
+        <!-- Load buffer -->
+        <script>
+            var video = document.getElementById('myvideo');
+            var placeholder = document.getElementById('placeholder_1');
+
+            video.onwaiting = function () {
+                showPlaceholder(placeholder_1, this);
+                console.log('onWaiting');
+            };
+            video.onplaying = function () {
+                hidePlaceholder(placeholder_1, this);
+                console.log('onPlaying');
+            };
+
+            function showPlaceholder(img) {
+                img.style.display = 'block';
+            }
+
+            function hidePlaceholder(img) {
+                img.style.display = 'none';
+            }
+        </script>
+        <!-- Load buffer -->
     </body>
 </html>
