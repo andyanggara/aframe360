@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <!-- Meta tags -->
-        <title>Video Tutorial</title>
+        <title>Video 3D Anaglyph</title>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,14 +37,15 @@
 
         <div class="d-flex align-items-center min-vh-100">
             <div>
-                <div id="main" class="text-center"></div>
+                <div id="timer" class="text-center"></div>
                 <!-- Video -->
                 <video
                     id="myvideo"
                     width="100%"
-                    autoplay
                     preload="auto"
                     onclick="this.paused ? this.play() : this.pause();"
+                    autoplay
+                    playsinline
                 >
                     <source src="assets/video/Dummy-3DAnaglyph.mp4" type="video/mp4" />
                 </video>
@@ -64,13 +65,13 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Video Tutorial</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Video 3D Anaglyph</h5>
                         </div>
-                        <div class="modal-body">
-                            Untuk pengalaman terbaik, gunakan device di mode landscape. Klik OK untuk melanjutkan.
-                        </div>
+                        <div class="modal-body">Untuk pengalaman terbaik, gunakan device di mode landscape.</div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="playVideo()">
+                                Tutup
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -98,49 +99,17 @@
                         $('#staticBackdrop').modal('show');
                     });
                     // Launch Modal
-                }
-            }
-        </script>
 
-        <!-- Fullscreen -->
-        <!-- <script>
-            var elem = document.getElementById('myvideo');
-            // elem.style.display = 'none';
-            function openFullscreen() {
-                if (elem.requestFullscreen) {
-                    elem.requestFullscreen();
-                    // elem.style.display = 'block';
-                } else if (elem.webkitRequestFullscreen) {
-                    /* Safari */
-                    elem.webkitRequestFullscreen();
-                    // elem.style.display = 'block';
-                } else if (elem.msRequestFullscreen) {
-                    /* IE11 */
-                    elem.msRequestFullscreen();
-                    // elem.style.display = 'block';
-                }
-            }
-        </script> -->
-        <!-- Fullscreen -->
-
-        <!-- Redirect to next page -->
-        <script>
-            var vid = document.getElementById('myvideo');
-            vid.onended = function () {
-                console.log('video end');
-                var count = 5;
-                var countdown = setInterval(function () {
-                    document.getElementById('main').innerHTML = 'Halaman akan pindah otomatis dalam ' + count;
-                    count--;
-                    console.log('pindah halaman dalam ' + count);
-                    if (count == 0) {
-                        window.location.href = '360video.html';
-                        clearInterval(countdown);
+                    // Play video on close modal
+                    var video = document.getElementById('myvideo');
+                    function playVideo() {
+                        video.play();
+                        console.log('video play');
                     }
-                }, 1000);
-            };
+                    // Play video on close modal
+                }
+            }
         </script>
-        <!-- Redirect to next page -->
 
         <!-- Load buffer -->
         <script>
@@ -165,5 +134,57 @@
             }
         </script>
         <!-- Load buffer -->
+
+        <!-- Redirect to next page -->
+        <script>
+            var vid = document.getElementById('myvideo');
+            vid.onended = function () {
+                console.log('video end');
+                // var count = 5;
+                // function countDown() {
+                //     var timer = document.getElementById('timer');
+                //     if (count > 0) {
+                //         count--;
+                //         timer.innerHTML = 'Halaman akan pindah otomatis dalam ' + count + ' detik';
+                //         console.log('Halaman akan pindah otomatis dalam ' + count + ' detik');
+                //         setTimeout('countDown()', 1000);
+                //     } else {
+                //         window.location.href = '3danaglyph.html';
+                //     }
+                // }
+                var count = 5;
+                var countdown = setInterval(function () {
+                    document.getElementById('timer').innerHTML = 'Halaman akan pindah otomatis dalam ' + count;
+                    count--;
+                    console.log('pindah halaman dalam ' + count);
+                    if (count == 0) {
+                        window.location.href = '360video.html';
+                        clearInterval(countdown);
+                    }
+                }, 1000);
+            };
+        </script>
+        <!-- Redirect to next page -->
+
+        <!-- Fullscreen -->
+        <!-- <script>
+            var elem = document.getElementById('myvideo');
+            // elem.style.display = 'none';
+            function openFullscreen() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen();
+                    // elem.style.display = 'block';
+                } else if (elem.webkitRequestFullscreen) {
+                    /* Safari */
+                    elem.webkitRequestFullscreen();
+                    // elem.style.display = 'block';
+                } else if (elem.msRequestFullscreen) {
+                    /* IE11 */
+                    elem.msRequestFullscreen();
+                    // elem.style.display = 'block';
+                }
+            }
+        </script> -->
+        <!-- Fullscreen -->
     </body>
 </html>
