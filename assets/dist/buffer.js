@@ -1,19 +1,19 @@
-var video = document.getElementById('videoSeri1');
+// var video = document.getElementById('videoSeri1');
 var placeholder = document.getElementById('placeholder_1');
 
-videoSeri1.onwaiting = function () {
+video.onwaiting = function () {
     showPlaceholder(placeholder_1, this);
     console.log('onWaiting');
 };
-videoSeri1.onplaying = function () {
+video.onplaying = function () {
     hidePlaceholder(placeholder_1, this);
     console.log('onPlaying');
 };
 
-function showPlaceholder(img, vid) {
+function showPlaceholder(img) {
     img.style.display = 'block';
 }
 
-function hidePlaceholder(img, vid) {
+function hidePlaceholder(img) {
     img.style.display = 'none';
 }
