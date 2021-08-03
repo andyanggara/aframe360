@@ -16,6 +16,9 @@ AFRAME.registerComponent('play-on-click', {
         if (!videoEl.paused) {
             videoEl.pause();
             console.log('pause');
+        } else if (videoEl.ended) {
+            videoEl.removeEventListener('click', this.onClick);
+            console.log('remove click');
         } else {
             videoEl.play();
             console.log('play');

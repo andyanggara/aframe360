@@ -79,6 +79,13 @@ body {
 
 /* Countdown */
 #countdown1 {
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 253, 235, 0.7), rgba(254, 250, 215, 0.7));
+    /* background: linear-gradient(180deg, #fffdeb 11.98%, #fefad7 85.42%); */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    pointer-events: none;
     z-index: 1;
 }
 
